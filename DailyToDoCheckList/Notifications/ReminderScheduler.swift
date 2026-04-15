@@ -18,7 +18,7 @@ enum ReminderSchedulerError: LocalizedError {
 
 @MainActor
 struct ReminderScheduler: ReminderScheduling {
-    private let center: UNUserNotificationCenter
+    nonisolated(unsafe) private let center: UNUserNotificationCenter
 
     init(center: UNUserNotificationCenter = .current()) {
         self.center = center
@@ -54,33 +54,5 @@ struct ReminderScheduler: ReminderScheduling {
 
     func cancelReminder() async {
         center.removePendingNotificationRequests(withIdentifiers: [AppConstants.reminderRequestIdentifier])
-    }
-}
-
-private extension UNUserNotificationCenter {
-    @MainActor
-    func requestAuthorization(options: UNAuthorizationOptions) async throws -> Bool {
-        try await withCheckedThrowingContinuation { continuation in
-            requestAuthorization(options: options) { granted, error in
-                if let error {
-                    continuation.resume(throwing: error)
-                } else {
-                    continuation.resume(returning: granted)
-                }
-            }
-        }
-    }
-
-    @MainActor
-    func add(_ request: UNNotificationRequest) async throws {
-        try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
-            add(request) { error in
-                if let error {
-                    continuation.resume(throwing: error)
-                } else {
-                    continuation.resume()
-                }
-            }
-        }
     }
 }

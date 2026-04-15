@@ -3,7 +3,11 @@ import SwiftUI
 @main
 struct DailyToDoCheckListApp: App {
     @Environment(\.scenePhase) private var scenePhase
-    @StateObject private var model = AppModel()
+    @StateObject private var model: AppModel
+
+    init() {
+        _model = StateObject(wrappedValue: AppModel())
+    }
 
     var body: some Scene {
         WindowGroup {

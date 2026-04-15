@@ -66,7 +66,7 @@ struct TaskSheetParser {
         var row: [String] = []
         var field = ""
         var isInsideQuotes = false
-        let characters = Array(csv)
+        let characters = Array(csv.replacingOccurrences(of: "\r\n", with: "\n"))
         var index = 0
 
         while index < characters.count {
