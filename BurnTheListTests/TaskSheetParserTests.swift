@@ -1,5 +1,5 @@
 import XCTest
-@testable import BurnList
+@testable import BurnTheList
 
 final class TaskSheetParserTests: XCTestCase {
     func testParsesNonEmptyTaskCellsForMatchingDateRowInSheetColumnOrder() throws {

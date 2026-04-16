@@ -35,7 +35,7 @@ struct ReminderScheduler: ReminderScheduling {
         await cancelReminder()
 
         let content = UNMutableNotificationContent()
-        content.title = "BURNLIST"
+        content.title = "BurnTheList"
         content.body = "Your tasks are waiting. Burn through them."
         content.sound = .default
 

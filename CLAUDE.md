@@ -6,16 +6,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 # Build the app
-xcodebuild -project BurnList.xcodeproj -scheme BurnList -configuration Debug build
+xcodebuild -project BurnTheList.xcodeproj -scheme BurnTheList -configuration Debug build
 
 # Run all tests
-xcodebuild -project BurnList.xcodeproj -scheme BurnList -destination 'platform=iOS Simulator,name=iPhone 16' test
+xcodebuild -project BurnTheList.xcodeproj -scheme BurnTheList -destination 'platform=iOS Simulator,name=iPhone 16' test
 
 # Run a single test class
-xcodebuild -project BurnList.xcodeproj -scheme BurnList -destination 'platform=iOS Simulator,name=iPhone 16' -only-testing:BurnListTests/ChecklistStoreTests test
+xcodebuild -project BurnTheList.xcodeproj -scheme BurnTheList -destination 'platform=iOS Simulator,name=iPhone 16' -only-testing:BurnTheListTests/ChecklistStoreTests test
 
 # Run a single test method
-xcodebuild -project BurnList.xcodeproj -scheme BurnList -destination 'platform=iOS Simulator,name=iPhone 16' -only-testing:BurnListTests/ChecklistStoreTests/testTogglePersistsCompletion test
+xcodebuild -project BurnTheList.xcodeproj -scheme BurnTheList -destination 'platform=iOS Simulator,name=iPhone 16' -only-testing:BurnTheListTests/ChecklistStoreTests/testTogglePersistsCompletion test
 ```
 
 ## Architecture
@@ -32,13 +32,13 @@ Google Sheet (CSV) → TaskSyncService → TaskSheetParser → ChecklistStore (U
 
 - **Shared/** — Code shared between the main app and widget extension
   - `DailyTask` — Core model. Tasks are keyed by compound ID `dateID|taskID` (date-isolated completion state)
-  - `ChecklistStore` — Persistence via app group UserDefaults (`group.com.example.BurnList.shared`), enabling widget data sharing
+  - `ChecklistStore` — Persistence via app group UserDefaults (`group.com.rxia.BurnTheList.shared`), enabling widget data sharing
   - `TaskSheetParser` — Parses Google Sheets CSV, dynamically identifies date and task columns, handles multiple date formats
   - `AppConstants` — App group identifier, UserDefaults keys, widget kind
-- **BurnList/App/** — `AppModel` is the central `@Observable`/`@MainActor` view model coordinating sync, persistence, and reminders
-- **BurnList/Views/** — `ChecklistHomeView` (main list with pull-to-refresh) and `SettingsView` (sheet URL config, reminder settings)
-- **BurnList/Sync/** — `TaskSyncService` handles network fetch with graceful cache fallback on failure
-- **BurnListWidget/** — Home screen widget with `ToggleTaskIntent` for interactive task toggling; refreshes daily at 00:05
+- **BurnTheList/App/** — `AppModel` is the central `@Observable`/`@MainActor` view model coordinating sync, persistence, and reminders
+- **BurnTheList/Views/** — `ChecklistHomeView` (main list with pull-to-refresh) and `SettingsView` (sheet URL config, reminder settings)
+- **BurnTheList/Sync/** — `TaskSyncService` handles network fetch with graceful cache fallback on failure
+- **BurnTheListWidget/** — Home screen widget with `ToggleTaskIntent` for interactive task toggling; refreshes daily at 00:05
 
 ### Design Decisions
 

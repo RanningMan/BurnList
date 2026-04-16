@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct BurnListApp: App {
+struct BurnTheListApp: App {
     @Environment(\.scenePhase) private var scenePhase
     @StateObject private var model: AppModel
 

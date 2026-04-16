@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E7FD8491E59F3C539B0B316C"
-               BuildableName = "BurnList.app"
-               BlueprintName = "BurnList"
-               ReferencedContainer = "container:BurnList.xcodeproj">
+               BuildableName = "BurnTheList.app"
+               BlueprintName = "BurnTheList"
+               ReferencedContainer = "container:BurnTheList.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "98FFBA6D676897096D141321"
-               BuildableName = "BurnListWidget.appex"
-               BlueprintName = "BurnListWidget"
-               ReferencedContainer = "container:BurnList.xcodeproj">
+               BuildableName = "BurnTheListWidget.appex"
+               BlueprintName = "BurnTheListWidget"
+               ReferencedContainer = "container:BurnTheList.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E7FD8491E59F3C539B0B316C"
-            BuildableName = "BurnList.app"
-            BlueprintName = "BurnList"
-            ReferencedContainer = "container:BurnList.xcodeproj">
+            BuildableName = "BurnTheList.app"
+            BlueprintName = "BurnTheList"
+            ReferencedContainer = "container:BurnTheList.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -56,9 +56,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1D7D4CFB3CA6CDC328F4013D"
-               BuildableName = "BurnListTests.xctest"
-               BlueprintName = "BurnListTests"
-               ReferencedContainer = "container:BurnList.xcodeproj">
+               BuildableName = "BurnTheListTests.xctest"
+               BlueprintName = "BurnTheListTests"
+               ReferencedContainer = "container:BurnTheList.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -78,9 +78,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E7FD8491E59F3C539B0B316C"
-            BuildableName = "BurnList.app"
-            BlueprintName = "BurnList"
-            ReferencedContainer = "container:BurnList.xcodeproj">
+            BuildableName = "BurnTheList.app"
+            BlueprintName = "BurnTheList"
+            ReferencedContainer = "container:BurnTheList.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E7FD8491E59F3C539B0B316C"
-            BuildableName = "BurnList.app"
-            BlueprintName = "BurnList"
-            ReferencedContainer = "container:BurnList.xcodeproj">
+            BuildableName = "BurnTheList.app"
+            BlueprintName = "BurnTheList"
+            ReferencedContainer = "container:BurnTheList.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

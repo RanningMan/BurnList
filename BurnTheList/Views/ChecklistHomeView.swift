@@ -118,7 +118,7 @@ struct ChecklistHomeView: View {
                 .padding(.bottom, 20)
             }
             .background(theme.background)
-            .navigationTitle("BURNLIST")
+            .navigationTitle("BurnTheList")
             .toolbarColorScheme(theme.useDarkMode ? .dark : .light, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {

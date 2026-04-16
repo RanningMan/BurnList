@@ -1,9 +1,9 @@
 
 <p align="center">
-  <img src="image.png" alt="BurnList" width="200">
+  <img src="image.png" alt="BurnTheList" width="200">
 </p>
 
-# BURNLIST
+# BURNTHELIST
 
 A focused iOS app for burning through your daily tasks. Syncs your checklist from a published Google Sheet — no backend, no account, no noise.
 
@@ -70,34 +70,34 @@ Google Sheet (CSV)
 | Module | Role |
 |--------|------|
 | `AppModel` | Central `@MainActor` / `ObservableObject` coordinating sync, persistence, and reminders |
-| `ChecklistStore` | Reads/writes tasks, history, configuration, and snapshots via app group UserDefaults (`group.com.example.BurnList.shared`) |
+| `ChecklistStore` | Reads/writes tasks, history, configuration, and snapshots via app group UserDefaults (`group.com.rxia.BurnTheList.shared`) |
 | `TaskSyncService` | Fetches the CSV, delegates to `TaskSheetParser`, saves the snapshot; `refreshPreservingCache` keeps cached data visible on error |
 | `TaskSheetParser` | Dynamically identifies the Date column and task columns; emits tasks keyed by `dateID|taskID` compound ID |
 | `AppConfiguration` | Persisted settings: sheet URL, theme, reminder time |
-| `BurnListWidget` | WidgetKit extension sharing data through the same app group; refreshes after 00:05 each day; supports `ToggleTaskIntent` for interactive toggling |
+| `BurnTheListWidget` | WidgetKit extension sharing data through the same app group; refreshes after 00:05 each day; supports `ToggleTaskIntent` for interactive toggling |
 
 ## Build & Test
 
 ```bash
 # Build
-xcodebuild -project BurnList.xcodeproj -scheme BurnList -configuration Debug build
+xcodebuild -project BurnTheList.xcodeproj -scheme BurnTheList -configuration Debug build
 
 # Run all tests
-xcodebuild -project BurnList.xcodeproj -scheme BurnList \
+xcodebuild -project BurnTheList.xcodeproj -scheme BurnTheList \
   -destination 'platform=iOS Simulator,name=iPhone 16' test
 
 # Run a single test class
-xcodebuild -project BurnList.xcodeproj -scheme BurnList \
+xcodebuild -project BurnTheList.xcodeproj -scheme BurnTheList \
   -destination 'platform=iOS Simulator,name=iPhone 16' \
-  -only-testing:BurnListTests/ChecklistStoreTests test
+  -only-testing:BurnTheListTests/ChecklistStoreTests test
 ```
 
 ## Project Structure
 
 ```
-BurnList/
+BurnTheList/
 ├── App/
-│   ├── BurnListApp.swift
+│   ├── BurnTheListApp.swift
 │   └── AppModel.swift
 ├── Views/
 │   ├── ChecklistHomeView.swift
@@ -110,12 +110,12 @@ BurnList/
 └── Resources/
     ├── Assets.xcassets
     ├── Info.plist
-    └── BurnList.entitlements
+    └── BurnTheList.entitlements
 
-BurnListWidget/
-├── BurnListWidget.swift
+BurnTheListWidget/
+├── BurnTheListWidget.swift
 ├── ToggleTaskIntent.swift
-└── BurnListWidget.entitlements
+└── BurnTheListWidget.entitlements
 
 Shared/                          # Compiled into both targets
 ├── Models/
@@ -131,7 +131,7 @@ Shared/                          # Compiled into both targets
     ├── CyberpunkTheme.swift     # AppTheme + all built-in themes
     └── DateFormatting.swift
 
-BurnListTests/
+BurnTheListTests/
 ├── ChecklistStoreTests.swift
 └── TaskSheetParserTests.swift
 ```

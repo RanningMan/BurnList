@@ -129,14 +129,14 @@ struct DailyChecklistWidgetView: View {
 }
 
 @main
-struct BurnListWidget: Widget {
+struct BurnTheListWidget: Widget {
     let kind: String = AppConstants.widgetKind
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: DailyChecklistProvider()) { entry in
             DailyChecklistWidgetView(entry: entry)
         }
-        .configurationDisplayName("BURNLIST")
+        .configurationDisplayName("BurnTheList")
         .description("Your daily ops. Burn through them.")
         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }
